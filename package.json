@@ -1,9 +1,12 @@
 {
-  "name": "notl-app",
+  "name": "default_angular-tailwindcss",
+  "description": "A default Angular project setup with Tailwind CSS",
+  "author": "Nelsam Kudzo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"ng serve\" \"npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch\"",
+    "setup": "npm install && npm install concurrently --save-dev && npm run start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -17,7 +20,9 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@tailwindcss/cli": "^4.1.6",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.1.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
